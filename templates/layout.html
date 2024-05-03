@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ValiaEvent</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/logo.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+        <a href="/" class="scrollto"><img src="" alt=""></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/event">Events</a></li>
+          <li><a href="/schedule">Schedule</a></li>
+          <li><a href="/venue">Venue</a></li>
+          <li><a href="/past">History</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/sponsors">Sponsors</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li class="buy-tickets"><a href="/regform">Participate</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+
+{% block  body %}  {% endblock %}
+
+    <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="ValiaEvenet">
+            <p>Welcome to our college's vibrant cultural event hub! Explore an array of electrifying performances, workshops, and showcases, celebrating diversity and creativity. Join us in igniting passion and fostering connections through unforgettable experiences</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="/">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/about">About us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/contact">Contact Us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/term">Terms of service</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/policy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Valia College, Andheri West <br>
+              D.N Nagar, Cosmopolitan Education Society Road <br>
+              Andheri West, Mumbai <br>
+              Maharashtra, India <br>
+              <strong>Phone: </strong>9892943838<br>
+              <strong>Email: </strong>valiacollege.@gmailcom<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://twitter.com/ValiaCollege" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/groups/nikhilbabu" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/valiacollege?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="instagram"><i class="fa fa-instagram"></i></a>
+              <!-- <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> -->
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>ValiaEvent</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+        -->
+        Designed by <a href="https://lordmelodias.github.io/Portfolio/">Rohit</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/superfish/hoverIntent.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/superfish/superfish.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/venobox/venobox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="{{ url_for('static', filename='contactform/contactform.js') }}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
