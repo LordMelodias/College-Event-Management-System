@@ -5,6 +5,10 @@
         "donjayamanne.python-extension-pack",
         "harryhopkinson.vs-code-runner",
         "mikeshaker.python-essentials",
-        "formulahendry.code-runner"
+        "formulahendry.code-runner",
+        "batisteo.vscode-django",
+        "bibhasdn.django-html",
+        "thebarkman.vscode-djaneiro",
+        "codewithtomi.auto-django"
     ]
 }
