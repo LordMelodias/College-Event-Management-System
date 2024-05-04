@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <main id="main">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about" class="wow fadeIn">
+      <div class="container">
+        <div class="section-header">
+          <h2>About The College</h2>
+          <p>Welcome Valia Cultural Event 2024-2025</p>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{{ url_for('static', filename='img/admin/valia.jpg') }}" alt="College Image" class="img-fluid">
+          </div>
+
+          <div class="col-md-6">
+            <div class="details">
+              <p>The Valia Chhaganlal Laljibhai College of Commerce and Lilavantiben Chhaganlal College of Arts was established in 1986 under the aegis of the Cosmopolitan Education Society. The parent body, Cosmopolitan Education society was established in 1961, when a group of likeminded residents of D. N. Nagar came together, inspired by the idealism of establishing a quality educational institution in the locality.</p>
+              <p>The college has the mission to provide value-based quality education and training in an environment conducive to intellectual, social and cultural enrichment to mould responsible citizens with a harmonious blend of Indian traditions and modern technology for a better tomorrow.</p>
+              <p>The college with a total strength of more than 2500 students offers undergraduate and post graduate programs both under the grant in aid system as well as the self -financed system. The various undergraduate programs offered are Bachelor of Commerce, Bachelor of Commerce (Accounting and Finance), Bachelor of Management Studies, Bachelor of Arts in Multimedia and Mass Communication, Bachelor of Science (Information Technology). The college also offers two masters programs Master of Commerce (Advanced Accountancy) and Master of Science (Information Technology). The Bachelor of Commerce program is in the grant in aid system and all other programs are self -financed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
+  Organisers Section
+============================-->
+<section id="organisers" class="wow fadeIn">
+  <div class="container">
+    <div class="section-header">
+      <h2>The Organisers</h2>
+      <p>Following faculty members and students were involved in hosting the events</p>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coordinator</td>
+              <td>{{param['coordinator']}}</td>
+            </tr>
+            <tr>
+              <td>Team Member</td>
+              <td>{{param['team1']}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>{{param['team2']}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>{{param['team3']}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>{{param['team4']}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>{{param['team5']}}</td>
+            </tr>
+            <tr>
+              <td>Chairperson</td>
+              <td>{{param['chairperson']}}</td>
+            </tr>
+            <tr>
+              <td>Graphics</td>
+              <td>{{param['graphics']}}</td>
+            </tr>
+            <tr>
+              <td>Social Media</td>
+              <td>{{param['socialmedia']}}</td>
+            </tr>
+            <tr>
+              <td>Public Relations Department</td>
+              <td>{{param['PRD']}}</td>
+            </tr>
+            <tr>
+              <td>Logistics Department</td>
+              <td>{{param['logistics']}}</td>
+            </tr>
+            <tr>
+              <td>Events Department</td>
+              <td>{{param['eventdep']}}</td>
+            </tr>
+            <tr>
+              <td>Registration and Invitation Department</td>
+              <td>{{param['registration']}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  </main>
+
+{% endblock %}

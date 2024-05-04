@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+<br><br>
+<section id="speakers" class="wow fadeInUp">
+    <div class="container">
+      <div class="section-header">
+        <h2>Valia College Events</h2>
+        <p>Here are some Upcoming Events</p>
+      </div>
+
+      <div class="row">
+        {% for event in events %}
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="{{ url_for('uploaded_event_image', filename=event.photo_path) }}" alt="{{ event.name }}" class="img-fluid">
+            <div class="details">
+              <h3><a href="{{ url_for('event_details', event_id=event.id) }}">{{ event.name }}</a></h3>
+              <p>Date: {{ event.date.strftime('%Y-%m-%d') }}</p><p><time>{{ event.time.strftime('%I:%M %p') }}</time></p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}

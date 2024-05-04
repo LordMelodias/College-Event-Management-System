@@ -1,6 +1,10 @@
 {
     "recommendations": [
         "cstrap.flask-snippets",
-        "waseemakram.jinja-snippets-flask"
+        "waseemakram.jinja-snippets-flask",
+        "donjayamanne.python-extension-pack",
+        "harryhopkinson.vs-code-runner",
+        "mikeshaker.python-essentials",
+        "formulahendry.code-runner"
     ]
 }
