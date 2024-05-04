@@ -7,3 +7,4 @@
 # pip install reportlab, 
 # pip install Flask Flask-Mail Flask-SQLAlchemy Flask-Bcrypt google-auth-oauthlib google-auth
 
+# Using JSON file to connecting Gmail API and changed the team member name and Event Name 
