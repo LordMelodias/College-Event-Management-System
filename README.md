@@ -13,3 +13,8 @@
 
 # About Page
 ![alt text](image-1.png)
+
+# Event Page
+We used Xampp application to connect mysql with system 
+the admin able to upload the events and the user can only view the events 
+So we create the database with name XYZ 
