@@ -10,3 +10,6 @@
 
 # Home Page
 ![alt text](image.png)
+
+# About Page
+![alt text](image-1.png)
