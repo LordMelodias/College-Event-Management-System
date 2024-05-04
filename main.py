@@ -23,7 +23,21 @@ from io import BytesIO
 
 app = Flask(__name__)
 
+# json file for about page
+with open('config.json', 'r') as c:
+    params = json.load(c)["params"]
+
+with open('config2.json', 'r') as c:
+    param = json.load(c)["param"]
+
+with open('config3.json', 'r') as c:
+    regevent = json.load(c)["regevent"]  
+
 # starting page
 @app.route("/")
 def home():
     return render_template('index.html')
+
+@app.route("/about")
+def about():
+    return render_template('about.html', param=param)

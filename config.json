@@ -1,0 +1,10 @@
+{
+    "params":
+    {
+      "local_server":"True",
+      "local_uri": "mysql://root:@localhost/valia",
+      "prod_uri":"mysql://root:@localhost/valia",
+      "gmail-user":"rohitchauhan9880@gmail.com",
+      "gmail-password":"hrkdsjslmpyevisg"
+    }
+  }
