@@ -72,6 +72,14 @@ def send_message(service, user_id, message):
     except HttpError as error:
         print(f"An error occurred: {error}")
 
+# Define the Event model
+class Event(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    date = db.Column(db.Date, nullable=False)
+    time = db.Column(db.Time, nullable=False)  # New column for time
+    description = db.Column(db.Text, nullable=False)
+    photo_path = db.Column(db.String(255), nullable=True)
 
 # starting page
 @app.route("/")
