@@ -18,3 +18,7 @@
 We used Xampp application to connect mysql with system 
 the admin able to upload the events and the user can only view the events 
 So we create the database with name XYZ 
+
+# Gmail API Connected Successfully
+Google provide token.json where the connection details is given
+
