@@ -101,6 +101,9 @@ db = SQLAlchemy(app)
 mail = Mail(app)
 
 
+def get_uploaded_event():
+    return Event.query.all()
+
 # Define the Event model
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
