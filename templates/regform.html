@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competition Entry Form</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+            /* Adjustments for smaller screens */
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+            label {
+                width: 100%;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea,
+            select {
+                width: 100%;
+            }
+            input[type="submit"] {
+                margin-left: 0;
+            }
+            .name-inputs {
+                width: 100%;
+            }
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 5%;
+                margin-left: 44%;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            /* Ensure relative positioning for child elements */
+        }
+        label {
+            font-weight: bold;
+            display: inline-block;
+            width: 120px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: calc(50% - 50px);
+            /* Set width for two inputs in a row */
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .name-inputs {
+            display: inline-block;
+            width: 49%;
+            /* Adjust width as needed */
+            vertical-align: top;
+        }
+        .group-member {
+            display: none;
+        }
+        .payment-details {
+            display: none;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 5%;
+            margin-left: 45%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #scanImage {
+            max-width: 100%;
+            /* Ensure the image fits within the container */
+            border: 1px solid #ccc;
+            /* Add a border for better visual separation */
+            border-radius: 5px;
+            /* Add rounded corners */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* Add a subtle shadow effect */
+            margin-top: 10px;
+            display: none;
+            /* Hide the scan image initially */
+            position: absolute;
+            /* Position the container relative to the form */
+            top: 50%;
+            /* Position the container in the middle vertically */
+            left: 50%;
+            /* Position the container in the middle horizontally */
+            transform: translate(-50%, -50%);
+            /* Center the container */
+            z-index: 9999;
+            /* Ensure the container is above other content */
+            background-color: #fff;
+            /* Set background color */
+            padding: 20px;
+            /* Add padding for better spacing */
+            border-radius: 8px;
+            /* Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Add a shadow effect */
+        }
+        #closeButton {
+            position: absolute;
+            /* Position the close button */
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Competition Entry Form</h2>
+        <form action="/submit_form" method="post" id="entryForm">
+            <p>Please complete the form below to provide details about your submission.</p>
+            <hr>
+            <h3>Participation Information</h3>
+            <div class="name-inputs">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="name-inputs">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <label for="organization">College Unique ID:</label>
+            <input type="number" id="organization" name="organization">
+            <p>(College Unique ID is given in your ID card)</p><br><br>
+
+            <label for="title">Event Title:</label>
+            <select id="title" name="title">
+                <option name="event1" value="{{regevent.event1}}" selected>{{regevent.event1}}</option>
+                <option name="event2" value="{{regevent.event2}}">{{regevent.event2}}</option>
+                <option name="event3" value="{{regevent.event3}}">{{regevent.event3}}</option>
+                <option name="event4" value="{{regevent.event4}}">{{regevent.event4}}</option>
+                <option name="event5" value="{{regevent.event5}}">{{regevent.event5}}</option>
+                <option name="event6" value="{{regevent.event6}}">{{regevent.event6}}</option>
+                <!-- Add more options as needed -->
+            </select><br>
+            <div class="group-member">
+                <label for="member1">Group Member 1:</label>
+                <input type="text" id="member1" name="member1"><br>
+                <label for="member2">Group Member 2:</label>
+                <input type="text" id="member2" name="member2"><br>
+                <label for="member3">Group Member 3:</label>
+                <input type="text" id="member3" name="member3"><br>
+            </div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <input type="submit" value="Apply">
+        </form>
+    </div>
+    <script>
+        document.getElementById('title').addEventListener('change', function () {
+            var groupMemberDiv = document.querySelector('.group-member');
+            if (this.value === 'group_dance') {
+                groupMemberDiv.style.display = 'block';
+            } else {
+                groupMemberDiv.style.display = 'none';
+            }
+        });
+        
+        document.getElementById('organization').addEventListener('input', function () {
+            var organizationInput = this;
+            var organizationValue = organizationInput.value.trim();
+        
+            // Check if the input value contains more than six digits
+            if (organizationValue.length < 6) {
+                // Display an error message
+                organizationInput.setCustomValidity('College Unique ID Invalid.');
+                organizationInput.reportValidity();       
+            }
+            else if(organizationValue.length >6)
+            {
+                organizationInput.setCustomValidity('College Unique ID Invalid.');
+                organizationInput.reportValidity();   
+            }
+            else {
+                // Reset the error message
+                organizationInput.setCustomValidity('');
+            }
+        });
+        
+    </script>
+</body>
+
+</html>
