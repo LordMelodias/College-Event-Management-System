@@ -21,8 +21,6 @@ from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from io import BytesIO
 
-app = Flask(__name__)
-
 # json file for about page
 with open('config.json', 'r') as c:
     params = json.load(c)["params"]
@@ -32,7 +30,6 @@ with open('config2.json', 'r') as c:
 
 with open('config3.json', 'r') as c:
     regevent = json.load(c)["regevent"]  
-
 
 # Generate a random secret key
 secret_key = secrets.token_hex(16)
@@ -72,6 +69,38 @@ def send_message(service, user_id, message):
     except HttpError as error:
         print(f"An error occurred: {error}")
 
+
+# Initialize the Flask application
+app = Flask(__name__)
+app.config['upload_image'] = 'C:/xampp/htdocs/valia/static/img/upload_image/'
+app.config['uploads_event'] = 'C:/xampp/htdocs/valia/static/img/uploads_event/'
+app.config['upload_schedule'] = 'C:/xampp/htdocs/valia/static/img/upload_schedule/'
+app.config['upload_sponsors'] = 'C:/xampp/htdocs/valia/static/img/upload_sponsors/'
+
+# for contact form
+local_server = True
+app.config.update(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT='465',
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME=params['gmail-user'],
+    MAIL_PASSWORD=params['gmail-password']
+)
+
+# Create a single instance of SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/valia'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = secret_key
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'rohitchauhan9880@gmail.com'  # Update with your Gmail email
+app.config['MAIL_PASSWORD'] = 'hrkdsjslmpyevisg'  # Update with your Gmail password
+
+db = SQLAlchemy(app)
+mail = Mail(app)
+
+
 # Define the Event model
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -85,6 +114,11 @@ class Event(db.Model):
 @app.route("/")
 def home():
     return render_template('index.html')
+
+@app.route("/event")
+def event():
+    events = Event.query.all()
+    return render_template("event.html", events=events)
 
 @app.route("/about")
 def about():
