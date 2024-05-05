@@ -19,6 +19,7 @@ We used Xampp application to connect mysql with system
 the admin able to upload the events and the user can only view the events 
 So we create the database with name XYZ.
 Database class create successfully.
+The images are save in uploads_event
 ![alt text](image-2.png)
 
 
