@@ -113,6 +113,49 @@ class Event(db.Model):
     description = db.Column(db.Text, nullable=False)
     photo_path = db.Column(db.String(255), nullable=True)
 
+# Define Participant model
+class Entry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(100), nullable=False)
+    last_name = db.Column(db.String(100), nullable=False)
+    college = db.Column(db.String(100))
+    event_title = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False, unique=True)  # Ensure email uniqueness
+    phone = db.Column(db.String(20), nullable=False, unique=True)   # Ensure phone uniqueness
+
+# Route to handle form submission
+@app.route('/submit_form', methods=['POST'])
+def submit_form():
+    if request.method == 'POST':
+        # Get form data
+        first_name = request.form['firstName']
+        last_name = request.form['lastName']
+        college = request.form['organization']
+        event_title = request.form['title']
+        email = request.form['email']
+        phone = request.form['phone']
+        
+
+        # Create a new Entry object and add it to the database session
+        new_entry = Entry(
+            first_name=first_name,
+            last_name=last_name,
+            college=college,
+            event_title=event_title,
+            email=email,
+            phone=phone
+        )
+        db.session.add(new_entry)
+        db.session.commit()
+        subject = 'Confirmation of Event Registration'
+        body = f'Dear {first_name},\n\nThank you for registering for the event "{event_title}". We look forward to seeing you there!\n\nBest regards,\nThe Event Team'
+        msg = Message(subject, sender='rohitchauhan9880@email@gmail.com', recipients=[email])
+        msg.body = body
+        mail.send(msg)
+        # Optionally, you can return a response or redirect to another page
+        return render_template('successful.html', participant=new_entry)
+
+
 # starting page
 @app.route("/")
 def home():
@@ -127,5 +170,8 @@ def event():
 def about():
     return render_template('about.html', param=param)
 
+@app.route("/regform")
+def regform():
+    return render_template("regform.html", regevent=regevent)
 
 
