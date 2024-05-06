@@ -28,5 +28,5 @@ Google provide token.json where the connection details is given
 
 # Registration form 
 When the user register for the event he will recieve mail from college for successfully registered 
-
+![alt text](image-3.png)
 
