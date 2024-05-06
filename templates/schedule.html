@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<section id="schedule" class="section-with-bg">
+  <div class="container wow fadeInUp">
+    <div class="section-header">
+      <h2>Event Schedule</h2>
+      <p>Here is our event schedule</p>
+    </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+      {% for day_number in range(1, 4) %}
+        <li class="nav-item">
+          <a class="nav-link {% if loop.index == 1 %}active{% endif %}" href="#day-{{ day_number }}" role="tab" data-toggle="tab">Day {{ day_number }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+      {% for day_number in range(1, 6) %}
+        <div role="tabpanel" class="col-lg-9 tab-pane fade {% if loop.index == 1 %}show active{% endif %}" id="day-{{ day_number }}">
+          {% for schedule in schedules if schedule.day == day_number %}
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>{{ schedule.time.strftime('%I:%M %p') }}</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{ url_for('static', filename='img/upload_schedule/' + schedule.event_image) }}" alt="{{ schedule.event_name }}" class="img-fluid">
+                </div>
+                <h4>{{ schedule.event_name }} <span>{{ schedule.title }}</span></h4>
+                <p>{{ schedule.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
