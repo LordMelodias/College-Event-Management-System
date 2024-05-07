@@ -88,7 +88,7 @@ app.config.update(
 )
 
 # Create a single instance of SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/valia'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/XYZ'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = secret_key
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -185,4 +185,11 @@ def about():
 def regform():
     return render_template("regform.html", regevent=regevent)
 
-
+# Schedule Event 
+@app.route("/schedule")
+def schedule():
+    selected_day = request.args.get('day', default=1, type=int)
+    schedules = Schedule.query.all()
+    print("Selected Day:", selected_day)
+    print("Retrieved Schedules:", schedules)
+    return render_template("schedule.html", schedules=schedules, selected_day=selected_day)

@@ -22,6 +22,11 @@ Database class create successfully.
 The images are save in uploads_event
 ![alt text](image-2.png)
 
+# Schedule Page
+We create a schedule page which is connect mysql.
+the admin able to upload the schedule and the user can only view the schedule for events.
+so we create the table in XYZ database to upload schedule
+![alt text](image-4.png)
 
 # Gmail API Connected Successfully
 Google provide token.json where the connection details is given
