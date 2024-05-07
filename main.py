@@ -94,7 +94,7 @@ app.config['SECRET_KEY'] = secret_key
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'rohit######@gmail.com'  # Update with your Gmail email
+app.config['MAIL_USERNAME'] = 'rohit######@######'  # Update with your Gmail email
 app.config['MAIL_PASSWORD'] = 'h##############'  # Update with your Gmail password
 
 db = SQLAlchemy(app)
