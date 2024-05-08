@@ -193,3 +193,8 @@ def schedule():
     print("Selected Day:", selected_day)
     print("Retrieved Schedules:", schedules)
     return render_template("schedule.html", schedules=schedules, selected_day=selected_day)
+
+# term and condition
+@app.route("/term")
+def term():
+    return render_template("term.html")

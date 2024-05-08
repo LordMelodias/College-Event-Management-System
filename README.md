@@ -37,3 +37,7 @@ Google provide token.json where the connection details is given
 When the user register for the event he will recieve mail from college for successfully registered 
 ![alt text](image-3.png)
 
+# Term and Condition page
+Added term and condition for website
+![alt text](image-6.png)
+
