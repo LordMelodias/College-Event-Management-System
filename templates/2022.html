@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photo Perfect</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&amp;display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&amp;display=swap" media="print" onload="this.media='all'"/>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&amp;display=swap"/>
+    </noscript>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css?') }}" rel="stylesheet">
+  </head>
+  <body id="top">
+    <div class="page">
+      <div class="page-content">
+        <div class="container">
+<div class="container pp-section">
+  <div class="row">
+    <div class="col-md-9 col-sm-12 px-0">
+      <h1 class="h3"> Events 2022-2023 Memory</h1>
+    </div>
+  </div>
+</div>
+<div class="container px-0 py-4">
+  <div class="pp-category-filter">
+    <div class="row">
+      <div class="col-sm-12"><a class="btn btn-primary pp-filter-button" href="#" data-filter="all">All</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="staff">Staff</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="group">Event</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="college">College</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="winner">Winner</a></div>
+    </div>
+  </div>
+</div>
+<div class="owl-carousel gallery-carousel">
+<div class="container px-0">
+  <div class="pp-gallery">
+    <div class="card-columns">
+      <div class="card" data-groups="[&quot;winner&quot;]">
+          <a href="{{ url_for('static', filename='img/images/w1.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/w1.jpg') }}" alt="group"/></a>
+        
+        </div>
+      <div class="card" data-groups="[&quot;winner&quot;]">
+          <a href="{{ url_for('static', filename='img/images/w2.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/w2.jpg') }}" alt="group"/></a>
+          
+        </div>
+      <div class="card" data-groups="[&quot;winner&quot;]">
+          <a href="{{ url_for('static', filename='img/images/w3.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/w3.jpg') }}" alt="group"/></a> 
+      </div>
+      <div class="card" data-groups="[&quot;winner&quot;]">
+          <a href="{{ url_for('static', filename='img/images/w4.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/w4.jpg') }}" alt="winner"/></a>
+        </div>
+      <div class="card" data-groups="[&quot;winner&quot;]">
+          <a href="{{ url_for('static', filename='img/images/w5.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/w5.jpg') }}" alt="winner"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;winner&quot;]">
+          <a href="{{ url_for('static', filename='img/images/w6.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/w6.jpg') }}" alt="winner"/></a>
+    </div>
+      <div class="card" data-groups="[&quot;college&quot; , &quot;nature&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g1.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g1.jpg') }}" alt="winner"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;staff&quot;]">
+          <a href="{{ url_for('static', filename='img/images/s1.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/s1.jpg') }}" alt="college"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;staff&quot;]">
+          <a href="{{ url_for('static', filename='img/images/s3.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/s3.jpg') }}" alt="college"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;staff&quot;]">
+          <a href="{{ url_for('static', filename='img/images/s4.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/s4.jpg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;staff&quot;]">
+          <a href="{{ url_for('static', filename='img/images/s2.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/s2.jpg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;college&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g6.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g6.jpg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;college&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g2.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g2.jpg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;college&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g3.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g3.jpg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;college&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g4.jpeg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g4.jpeg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;college&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g5.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g5.jpg') }}" alt="college"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;winner&quot;]">
+          <a href="{{ url_for('static', filename='img/images/w7.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/w7.jpg') }}" alt="college"/></a>
+    </div>
+      <div class="card"data-groups="[&quot;college&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g7.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g7.jpg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;college&quot;]">
+          <a href="{{ url_for('static', filename='img/images/g8.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/g8.jpg') }}" alt="college"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;group&quot;]">
+          <a href="{{ url_for('static', filename='img/images/e1.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/e1.jpg') }}" alt="staff"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;group&quot;]">
+          <a href="{{ url_for('static', filename='img/images/e2.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/e2.jpg') }}" alt="winner"/></a>
+      </div>
+      <div class="card" data-groups="[&quot;group&quot;]">
+          <a href="{{ url_for('static', filename='img/images/e3.jpg') }}" data-gall="gallery-carousel" class="venobox"><img class="img-fluid" src="{{ url_for('static', filename='img/images/e3.jpg') }}" alt="college"/></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="pp-section"></div></div>
+</div> </div>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main2.js') }}"></script>
+    <script>
+        
+        $(document).ready(function () {
+            $('.venobox').venobox({
+              bgcolor: '',
+              overlayColor: 'rgba(6, 12, 34, 0.85)',
+              closeBackground: '',
+              closeColor: '#fff'
+            });
+        });
+    </script>
+  </body>
+</html>
