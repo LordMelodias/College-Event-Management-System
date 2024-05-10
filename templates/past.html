@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<section id="hotels" class="section-with-bg wow fadeInUp">
+
+    <div class="container">
+      <div class="section-header">
+        <h2>Past Events</h2>
+        <p>Her are Previous Events Memory</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="hotel">
+            <div class="hotel-img">
+              <img src="{{ url_for('static', filename='img/year/2023.jpg') }}" alt="Hotel 1" class="img-fluid">
+            </div>
+            <h3><a href="/2022">2022 - 2023</a></h3>
+            
+            <p>Jallosh Name</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="hotel">
+            <div class="hotel-img">
+              <img src="{{ url_for('static', filename='img/year/2022.png') }}" alt="Hotel 2" class="img-fluid">
+            </div>
+            <h3><a href="/2021">2021 - 2022</a></h3>
+            <p>Jallosh Name</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="hotel">
+            <div class="hotel-img">
+              <img src="{{ url_for('static', filename='img/year/2021.jpg') }}" alt="Hotel 3" class="img-fluid">
+            </div>
+            <h3><a href="/2020">2020 - 2021</a></h3>
+            <p>Jallosh Name</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+{% endblock %}
