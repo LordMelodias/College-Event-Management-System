@@ -36,7 +36,7 @@ We Create Past 3 year event Images
 
 # Gallery 
 Which contain current event images the admin will be uploaded images 
-![alt text](image-8.png)
+![alt text](image-9.png)
 
 # Gmail API Connected Successfully
 Google provide token.json where the connection details is given
