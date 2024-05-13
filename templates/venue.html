@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<section id="venue" class="wow fadeInUp">
+
+    <div class="container-fluid">
+
+      <div class="section-header">
+        <h2>Event Venue</h2>
+        <p>Event venue location info and gallery</p>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 venue-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.601577021813!2d72.82724527466637!3d19.125126950429504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9dfbfdde539%3A0x3db27ee27018f061!2sValia%20College%20of%20Arts%2CCommerce%20And%20Science!5e0!3m2!1sen!2sin!4v1703863705164!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+        <div class="col-lg-6 venue-info">
+          <div class="row justify-content-center">
+            <div class="col-11 col-lg-8">
+              <h3>Welcome to the Event Venue at Valia College</h3>
+              <p>Step into a realm of creativity and excitement as we bring you an array of captivating performances, workshops, and showcases. Join us in celebrating diversity, talent, and the spirit of community right here at Valia College</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid venue-gallery-container">
+      <div class="row no-gutters">
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/hall.jpg') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/hall.jpg') }}" alt="" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/library.jpeg') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/library.jpeg') }}" alt="" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/hall2.png') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/hall2.png') }}" alt="hall2" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/4.jpg') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/4.jpg') }}" alt="campus" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/5.jpg') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/5.jpg') }}" alt="ground_floor" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/6.jpg') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/6.jpg') }}" alt="event" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/7.jpg') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/7.jpg') }}" alt="stage" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <a href="{{ url_for('static', filename='img/venue-gallery/8.jpg') }}" class="venobox" data-gall="venue-gallery">
+              <img src="{{ url_for('static', filename='img/venue-gallery/8.jpg') }}" alt="" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}
