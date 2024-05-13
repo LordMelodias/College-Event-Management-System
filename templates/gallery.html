@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<section id="gallery" class="wow fadeInUp">
+  <div class="container">
+      <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Check our gallery from the recent events</p>
+      </div>
+  </div>
+
+  <div class="owl-carousel gallery-carousel">
+      {% for image in images %}
+      <a href="{{ url_for('static', filename='img/upload_image/' + image.filename) }}" class="venobox" data-gall="gallery-carousel">
+          <img src="{{ url_for('static', filename='img/upload_image/' + image.filename) }}" alt="{{ image.filename }}">
+      </a>
+      {% endfor %}
+  </div>
+</section>
+
+
+{% endblock %}
