@@ -198,3 +198,9 @@ def schedule():
 @app.route("/term")
 def term():
     return render_template("term.html")
+
+# Gallery Display
+@app.route("/gallery")
+def gallery():
+    images = Image.query.all()
+    return render_template("gallery.html", images=images)
