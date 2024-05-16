@@ -100,20 +100,13 @@ app.config['MAIL_PASSWORD'] = 'h##############'  # Update with your Gmail passwo
 db = SQLAlchemy(app)
 mail = Mail(app)
 
-class Schedule(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    day = db.Column(db.Integer)
-    time = db.Column(db.Time)
-    event_name = db.Column(db.String(100))
-    event_image = db.Column(db.String(255))
-    title = db.Column(db.String(100))
-    description = db.Column(db.Text)
-
-def get_uploaded_event():
-    return Event.query.all()
-
-def get_uploaded_schedule():
-    return Schedule.query.all()
+class Contact(db.Model):
+    sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(20), nullable=False)
+    date = db.Column(db.String(12), nullable=True)
+    subject = db.Column(db.String(12), nullable=False)
+    message = db.Column(db.String(120), nullable=False)
 
 # Define the Event model
 class Event(db.Model):
@@ -155,6 +148,12 @@ class Sponsors(db.Model):
 # funtion for uploading.....
 def get_uploaded_images():
     return Image.query.all()
+
+def get_uploaded_event():
+    return Event.query.all()
+
+def get_uploaded_schedule():
+    return Schedule.query.all()
 
 # Route to handle form submission
 @app.route('/submit_form', methods=['POST'])
