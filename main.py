@@ -100,6 +100,17 @@ app.config['MAIL_PASSWORD'] = 'h##############'  # Update with your Gmail passwo
 db = SQLAlchemy(app)
 mail = Mail(app)
 
+# Define the User model
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    verification_code = db.Column(db.String(16), nullable=False)  # Use the correct column name
+    verified = db.Column(db.Boolean, default=False)
+    otp = db.Column(db.String(6), nullable=True)
+    reset_otp = db.Column(db.String(6), nullable=True)
+
 class Contact(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False)
