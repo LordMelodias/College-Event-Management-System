@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <section id="speakers-details" class="wow fadeIn">
+      <div class="container">
+        <div class="section-header">
+          <h2>Events Details</h2>
+          <p>Event Category.</p>
+        </div>
+
+        <div class="row">
+          {% if event %}
+          <div class="col-md-6">
+            <img src="{{ url_for('uploaded_event_image', filename=event.photo_path) }}" alt="{{ event.name }}" class="img-fluid">
+          </div>
+          <div class="col-md-6">
+            <div class="details">
+              <h2>{{ event.name }}</h2>
+              <h5>{{event.date}}</h5><h6>{{event.time.strftime('%I:%M %p')}}</h6>
+              <!-- Event Share in Social Media -->
+              <div class="social"> 
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+              <p>{{ event.description }}</p>
+            </div>
+            <a href="/feedback" class="btn btn-secondary" >Feedback</a>
+          </div>
+          {% else %}
+            <p>No event found.</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
