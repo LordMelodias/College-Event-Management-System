@@ -134,6 +134,14 @@ class Entry(db.Model):
     email = db.Column(db.String(100), nullable=False, unique=True)  # Ensure email uniqueness
     phone = db.Column(db.String(20), nullable=False, unique=True)   # Ensure phone uniqueness
 
+class Schedule(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    day = db.Column(db.Integer)
+    time = db.Column(db.Time)
+    event_name = db.Column(db.String(100))
+    event_image = db.Column(db.String(255))
+    title = db.Column(db.String(100))
+    description = db.Column(db.Text)
 
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
