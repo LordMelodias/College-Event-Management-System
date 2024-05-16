@@ -134,6 +134,10 @@ class Entry(db.Model):
     email = db.Column(db.String(100), nullable=False, unique=True)  # Ensure email uniqueness
     phone = db.Column(db.String(20), nullable=False, unique=True)   # Ensure phone uniqueness
 
+# funtion for uploading.....
+def get_uploaded_images():
+    return Image.query.all()
+
 # Route to handle form submission
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
@@ -204,3 +208,8 @@ def term():
 def gallery():
     images = Image.query.all()
     return render_template("gallery.html", images=images)
+
+# event 2020
+@app.route("/2020")
+def past2020():
+    return render_template('2020.html')
