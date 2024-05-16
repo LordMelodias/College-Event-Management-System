@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>Feedback Form</h2>
+                <p>Feel free to share your feedback with us!</p>
+            </div>
+            <div class="form">
+                <form action="/feedback_submit" method="post" role="form" class="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">Feedback</label>
+                        <textarea class="form-control" name="feedback" id="feedback" rows="5" placeholder="Your Feedback" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                    {% if error_message %}
+                        <div class="alert alert-success mt-3" role="alert">
+                            {{ error_message }}
+                        </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
