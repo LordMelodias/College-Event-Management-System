@@ -147,6 +147,11 @@ class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String(255), nullable=False)
 
+# Add this new model for sponsors
+class Sponsors(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    filename = db.Column(db.String(255), nullable=False)
+
 # funtion for uploading.....
 def get_uploaded_images():
     return Image.query.all()
