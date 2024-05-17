@@ -21,8 +21,9 @@ So we create the database with name XYZ.
 Database class create successfully.
 The images are save in uploads_event
 ![alt text](image-2.png)
-Events Details 
+Events Details it contains events date, times and feedback pages.
 ![alt text](image-8.png)
+
 
 # Schedule Page
 We create a schedule page which is connect mysql.
