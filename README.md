@@ -26,6 +26,10 @@ Events Details it contains events date, times and feedback pages.
 Feedback Page
 ![alt text](image-10.png)
 
+# Venue Page
+Venue Page Contain location and college images e.g. College Campus, College Hall, College Classroom where events is conduct.
+![alt text](image-11.png)
+
 # Schedule Page
 We create a schedule page which is connect mysql.
 the admin able to upload the schedule and the user can only view the schedule for events.
