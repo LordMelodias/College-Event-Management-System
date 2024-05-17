@@ -23,7 +23,8 @@ The images are save in uploads_event
 ![alt text](image-2.png)
 Events Details it contains events date, times and feedback pages.
 ![alt text](image-8.png)
-
+Feedback Page
+![alt text](image-10.png)
 
 # Schedule Page
 We create a schedule page which is connect mysql.

@@ -251,3 +251,8 @@ def past2021():
 @app.route("/2022")
 def past2022():
     return render_template('2022.html')
+
+# Venue Display
+@app.route("/venue")
+def venue():
+    return render_template("venue.html")
