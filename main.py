@@ -241,3 +241,8 @@ def gallery():
 @app.route("/2020")
 def past2020():
     return render_template('2020.html')
+
+# event 2020
+@app.route("/2021")
+def past2021():
+    return render_template('2021.html')
