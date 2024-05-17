@@ -57,3 +57,6 @@ When the user register for the event he will recieve mail from college for succe
 Added term and condition for website
 ![alt text](image-6.png)
 
+# Privacy Policy
+![alt text](image-12.png)
+
