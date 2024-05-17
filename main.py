@@ -246,3 +246,8 @@ def past2020():
 @app.route("/2021")
 def past2021():
     return render_template('2021.html')
+
+# event 2020
+@app.route("/2022")
+def past2022():
+    return render_template('2022.html')
