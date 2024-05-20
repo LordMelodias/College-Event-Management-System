@@ -1,0 +1,27 @@
+<!-- sponsors.html -->
+
+{% extends "layout.html" %}
+{% block body %}
+
+<section id="supporters" class="section-with-bg wow fadeInUp">
+
+    <div class="container">
+      <div class="section-header">
+        <h2>Sponsors</h2>
+      </div>
+
+      <div class="row no-gutters supporters-wrap clearfix">
+        {% for sponsor in images %}
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="supporter-logo">
+            <img src="{{ url_for('uploaded_sponsor_image', filename=sponsor.filename) }}" class="img-fluid" alt="">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </section>
+
+{% endblock %}
