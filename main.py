@@ -262,3 +262,8 @@ def venue():
 def sponsors():
     images = get_uploaded_sponsors()
     return render_template("sponsors.html", images=images)
+
+# registration successful 
+@app.route("/message")
+def message():
+    return render_template("thank.html")
