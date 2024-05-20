@@ -262,4 +262,3 @@ def venue():
 def sponsors():
     images = get_uploaded_sponsors()
     return render_template("sponsors.html", images=images)
-
