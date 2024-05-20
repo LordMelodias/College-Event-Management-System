@@ -256,3 +256,9 @@ def past2022():
 @app.route("/venue")
 def venue():
     return render_template("venue.html")
+
+# Sponsors Image Upload
+@app.route("/sponsors")
+def sponsors():
+    images = get_uploaded_sponsors()
+    return render_template("sponsors.html", images=images)
