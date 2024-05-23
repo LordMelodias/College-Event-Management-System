@@ -294,3 +294,26 @@ def admin():
             error_message = "Incorrect email or password. Please try again."
             return render_template("admin/login.html", error_message=error_message)
     return render_template("admin/login.html")
+
+bcrypt = Bcrypt(app)  # Initialize Bcrypt with your Flask app
+#Admin Register
+@app.route("/register", methods=['GET', 'POST'])
+def reg():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        email = request.form.get('email')
+        # Hash the password before storing it
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        # Generate a random verification code
+        verification_code = secrets.token_urlsafe(16)
+        # Generate a new OTP
+        otp = generate_otp()
+        # Save the user information, verification code, and hashed password to the database
+        new_user = User(username=username, password=hashed_password, email=email, verification_code=verification_code, verified=False, otp=otp)
+        db.session.add(new_user)
+        db.session.commit()
+        # Send the verification email with OTP
+        send_verification_email(email, otp)
+        return render_template('admin/otp.html', email=email)
+    return render_template("admin/registration.html")
