@@ -166,6 +166,9 @@ def get_uploaded_event():
 def get_uploaded_schedule():
     return Schedule.query.all()
 
+def get_uploaded_sponsors():
+    return Sponsors.query.all()
+
 # Route to handle form submission
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
@@ -267,3 +270,4 @@ def sponsors():
 @app.route("/message")
 def message():
     return render_template("thank.html")
+
