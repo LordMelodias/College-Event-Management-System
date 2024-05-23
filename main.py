@@ -271,3 +271,26 @@ def sponsors():
 def message():
     return render_template("thank.html")
 
+# ---------------------------------admin------------------------------
+#Admin Page
+@app.route("/admin", methods=['GET', 'POST'])
+def admin():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        user = User.query.filter(func.lower(User.email) == func.lower(email)).first()
+        if user and bcrypt.check_password_hash(user.password, password):  # Compare with the actual password
+            if user.verified:
+                # User is verified, store user information in session
+                session['username'] = user.username
+                session['email'] = user.email
+                return redirect(url_for('dashboard'))  # Redirect to admin dashboard or another page
+            else:
+                # User is not verified, show error message
+                error_message = "Your account is not verified. Please verify your email before logging in."
+                return render_template("admin/login.html", error_message=error_message)
+        else:
+            # Incorrect email or password, show error message
+            error_message = "Incorrect email or password. Please try again."
+            return render_template("admin/login.html", error_message=error_message)
+    return render_template("admin/login.html")
