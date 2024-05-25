@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<style>
+    /* Your existing styles remain unchanged */
+</style>
+
+<body>
+    <div class="global-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card form-container">
+                        <div class="card-body">
+                            <h2>Verification Email Sent</h2>
+                                <p>Thank you for registering! We have sent a verification email to <strong>{{ email }}</strong>.</p>
+                                <p>Please check your email and enter the OTP to complete the registration process.</p>
+                                <form action="/verify" method="POST"> <!-- Updated action attribute -->
+                                    <div class="form-group">
+                                        <label for="OTP" style="color: #1523a4;">Enter OTP (6 digits)</label>
+                                        <input type="text" id="otp" name="otp" required>
+                                        <input type="hidden" name="email" value="{{ email }}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block"
+                                        style="background-color: #1523a4;">Verify</button>
+                                    <p>Didn't receive otp check Email Address</p>
+                                </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
