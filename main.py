@@ -332,3 +332,17 @@ def send_verification_email(recipient_email, otp):
         print("Verification Email Sent Successfully")
     except Exception as e:
         print("Error Sending Verification Email:", str(e))
+        
+# otp verify page
+@app.route("/verify", methods=['POST'])
+def verify_email():
+    email = request.form.get('email')
+    user_otp = request.form.get('otp')
+    user = User.query.filter_by(email=email, otp=user_otp, verified=False).first()
+    if user:
+        user.verified = True
+        db.session.commit()
+        return render_template('admin/verification_success.html', email=user.email)
+    else:
+        return render_template('admin/verification_failure.html')
+    return render_template("admin/otp.html")
