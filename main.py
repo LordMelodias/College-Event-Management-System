@@ -169,6 +169,9 @@ def get_uploaded_schedule():
 def get_uploaded_sponsors():
     return Sponsors.query.all()
 
+def generate_otp():
+    return str(random.randint(100000, 999999))
+
 # Route to handle form submission
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
@@ -317,3 +320,4 @@ def reg():
         send_verification_email(email, otp)
         return render_template('admin/otp.html', email=email)
     return render_template("admin/registration.html")
+
