@@ -348,3 +348,4 @@ def verify_email():
     return render_template("admin/otp.html")
 
 bcrypt = Bcrypt(app)  # Initialize Bcrypt with your Flask app
+
