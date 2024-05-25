@@ -321,3 +321,14 @@ def reg():
         return render_template('admin/otp.html', email=email)
     return render_template("admin/registration.html")
 
+# Function to send a verification email with OTP
+def send_verification_email(recipient_email, otp):
+    subject = 'Email Verification for Your Registration'
+    body = f'Thank you for registering! Your OTP for email verification is: {otp}'
+    msg = Message(subject, sender='rohitchauhan9880@gmail.com', recipients=[recipient_email])
+    msg.body = body
+    try:
+        mail.send(msg)
+        print("Verification Email Sent Successfully")
+    except Exception as e:
+        print("Error Sending Verification Email:", str(e))
