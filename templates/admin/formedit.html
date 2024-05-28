@@ -1,0 +1,36 @@
+{% extends "admin/layout.html" %}
+{% block body %}
+    <div class="container">
+        <h1 align="center">Update Organizers Data</h1>
+        <form action="/update_event" method="post" class="update-form">
+            <div class="form-group">
+                <label for="event1">Event 1</label>
+                <input type="text" name="event1" class="form-control" value="{{ regevent['event1'] }}">
+            </div>
+            <div class="form-group">
+                <label for="event2">Event 2</label>
+                <input type="text" name="event2" class="form-control" value="{{ regevent['event2'] }}">
+            </div>
+            <div class="form-group">
+                <label for="event3">Event 3</label>
+                <input type="text" name="event3" class="form-control" value="{{ regevent['event3'] }}">
+            </div>
+            <div class="form-group">
+                <label for="event 4">Event 4</label>
+                <input type="text" name="event4" class="form-control" value="{{ regevent['event4'] }}">
+            </div>
+            <div class="form-group">
+                <label for="event5">Event 5</label>
+                <input type="text" name="event5" class="form-control" value="{{ regevent['event5'] }}">
+            </div>
+            <div class="form-group">
+                <label for="event6">Event 6</label>
+                <input type="text" name="event6" class="form-control" value="{{ regevent['event6'] }}">
+            </div>
+                        
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+{% endblock %}
