@@ -1,0 +1,67 @@
+{% extends "admin/layout.html" %}
+{% block body %}
+
+<h2 align="center">Event Upload</h2>
+<!-- Event Upload Form -->
+<div class="container">
+    <form action="/eventup" method="post" enctype="multipart/form-data">
+        <!-- Form fields for uploading an event -->
+        <div class="form-group">
+        <label for="event_name">Event Name:</label>
+        <input class="form-control" type="text" name="event_name" required><br>
+        </div>
+
+        <div class="form-group">
+        <label for="event_date">Event Date:</label>
+        <input class="form-control" type="date" name="event_date" required><br>
+        </div>
+
+        <div class="form-group">
+        <label for="event_time">Event Time:</label>
+        <input class="form-control" type="time" name="event_time" required><br>
+        </div>
+
+        <div class="form-group">
+        <label for="event_photo">Event Photo:</label>
+        <input class="form-control" type="file" name="event_photo" accept="image/*" required><br>
+        </div>
+
+        <div class="form-group">
+        <label for="event_description">Event Description:</label><br>
+        <textarea class="form-control" name="event_description" rows="4" cols="50" required></textarea><br>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload Event</button>
+    </form>
+</div>
+
+<!-- Display Events -->
+<div class="container mt-4">
+    <h2>Event List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Event Date</th>
+                <th>Event Time</th>
+                <th>Event Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.date.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ event.time.strftime('%H:%M') }}</td>
+                    <td><img src="{{ url_for('uploaded_event_image', filename=event.photo_path) }}" alt="{{ event.name }}" style="max-width: 100px;"></td>
+                    <td>
+                        <a href="{{ url_for('delete_event', event_id=event.id) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
